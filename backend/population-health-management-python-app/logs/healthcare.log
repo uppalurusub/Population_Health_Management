@@ -1,0 +1,262 @@
+2026-07-14 13:12:31 | INFO | config.llm_config:<module>:18 | Using OpenRouter Model: meta-llama/llama-3.3-70b-instruct
+2026-07-14 13:12:31 | INFO | agents.population_agents:__init__:17 | Initializing Population Health Agents...
+2026-07-14 13:12:31 | SUCCESS | agents.population_agents:__init__:23 | {model} Model Client initialized successfully
+2026-07-14 13:12:31 | SUCCESS | agents.population_agents:__init__:44 | DataAgent initialized
+2026-07-14 13:12:31 | SUCCESS | agents.population_agents:__init__:70 | SegmentationAgent initialized
+2026-07-14 13:12:31 | SUCCESS | agents.population_agents:__init__:99 | RiskAgent initialized
+2026-07-14 13:12:31 | SUCCESS | agents.population_agents:__init__:121 | InterventionAgent initialized
+2026-07-14 13:12:31 | SUCCESS | agents.population_agents:__init__:125 | All Population Health Agents initialized successfully
+2026-07-14 13:12:31 | INFO | memory.population_memory:__init__:11 | PopulationMemory initialized
+2026-07-14 13:12:35 | INFO | services.population_service:__init__:25 | Initializing PopulationHealthService
+2026-07-14 13:12:35 | INFO | implementation.population_impl:__init__:25 | Initializing PopulationHealthImplementation
+2026-07-14 13:12:35 | SUCCESS | implementation.population_impl:__init__:45 | PopulationHealthImplementation initialized
+2026-07-14 13:12:35 | SUCCESS | services.population_service:__init__:31 | PopulationHealthService initialized successfully
+2026-07-14 13:12:59 | INFO | config.llm_config:<module>:18 | Using OpenRouter Model: meta-llama/llama-3.3-70b-instruct
+2026-07-14 13:12:59 | INFO | agents.population_agents:__init__:17 | Initializing Population Health Agents...
+2026-07-14 13:12:59 | SUCCESS | agents.population_agents:__init__:23 | {model} Model Client initialized successfully
+2026-07-14 13:12:59 | SUCCESS | agents.population_agents:__init__:44 | DataAgent initialized
+2026-07-14 13:12:59 | SUCCESS | agents.population_agents:__init__:70 | SegmentationAgent initialized
+2026-07-14 13:12:59 | SUCCESS | agents.population_agents:__init__:99 | RiskAgent initialized
+2026-07-14 13:12:59 | SUCCESS | agents.population_agents:__init__:121 | InterventionAgent initialized
+2026-07-14 13:12:59 | SUCCESS | agents.population_agents:__init__:125 | All Population Health Agents initialized successfully
+2026-07-14 13:12:59 | INFO | memory.population_memory:__init__:11 | PopulationMemory initialized
+2026-07-14 13:13:02 | INFO | services.population_service:__init__:25 | Initializing PopulationHealthService
+2026-07-14 13:13:02 | INFO | implementation.population_impl:__init__:25 | Initializing PopulationHealthImplementation
+2026-07-14 13:13:02 | SUCCESS | implementation.population_impl:__init__:45 | PopulationHealthImplementation initialized
+2026-07-14 13:13:02 | SUCCESS | services.population_service:__init__:31 | PopulationHealthService initialized successfully
+2026-07-14 13:13:04 | INFO | config.llm_config:<module>:18 | Using OpenRouter Model: meta-llama/llama-3.3-70b-instruct
+2026-07-14 13:13:04 | INFO | agents.population_agents:__init__:17 | Initializing Population Health Agents...
+2026-07-14 13:13:04 | SUCCESS | agents.population_agents:__init__:23 | {model} Model Client initialized successfully
+2026-07-14 13:13:04 | SUCCESS | agents.population_agents:__init__:44 | DataAgent initialized
+2026-07-14 13:13:04 | SUCCESS | agents.population_agents:__init__:70 | SegmentationAgent initialized
+2026-07-14 13:13:04 | SUCCESS | agents.population_agents:__init__:99 | RiskAgent initialized
+2026-07-14 13:13:04 | SUCCESS | agents.population_agents:__init__:121 | InterventionAgent initialized
+2026-07-14 13:13:04 | SUCCESS | agents.population_agents:__init__:125 | All Population Health Agents initialized successfully
+2026-07-14 13:13:04 | INFO | memory.population_memory:__init__:11 | PopulationMemory initialized
+2026-07-14 13:13:08 | INFO | services.population_service:__init__:25 | Initializing PopulationHealthService
+2026-07-14 13:13:08 | INFO | implementation.population_impl:__init__:25 | Initializing PopulationHealthImplementation
+2026-07-14 13:13:08 | SUCCESS | implementation.population_impl:__init__:45 | PopulationHealthImplementation initialized
+2026-07-14 13:13:08 | SUCCESS | services.population_service:__init__:31 | PopulationHealthService initialized successfully
+2026-07-14 13:13:08 | INFO | main:lifespan:16 | Starting Population Health Management API...
+2026-07-14 13:13:08 | SUCCESS | main:lifespan:20 | Population Health Management API started successfully
+2026-07-14 13:14:14 | INFO | routers.population_router:stratify_patient:44 | Received stratification request for patient=PAT10003
+2026-07-14 13:14:14 | INFO | services.population_service:stratify_patient:45 | Stratification request received for patient=PAT10003
+2026-07-14 13:14:16 | INFO | implementation.population_impl:stratify_patient:56 | Starting population analysis for patient=PAT10003
+2026-07-14 13:14:16 | INFO | implementation.population_impl:stratify_patient:70 | Executing DataAgent
+2026-07-14 13:14:26 | SUCCESS | implementation.population_impl:stratify_patient:93 | DataAgent completed
+2026-07-14 13:14:26 | INFO | implementation.population_impl:stratify_patient:101 | Executing SegmentationAgent
+2026-07-14 13:14:32 | SUCCESS | implementation.population_impl:stratify_patient:126 | SegmentationAgent completed
+2026-07-14 13:14:32 | INFO | implementation.population_impl:stratify_patient:134 | Executing RiskAgent
+2026-07-14 13:14:43 | SUCCESS | implementation.population_impl:stratify_patient:164 | RiskAgent completed
+2026-07-14 13:14:43 | WARNING | implementation.population_impl:stratify_patient:176 | RiskAgent returned non-JSON. Using default values.
+2026-07-14 13:14:43 | INFO | implementation.population_impl:stratify_patient:193 | Executing InterventionAgent
+2026-07-14 13:15:06 | SUCCESS | implementation.population_impl:stratify_patient:221 | InterventionAgent completed
+2026-07-14 13:15:06 | INFO | implementation.population_impl:stratify_patient:326 | Saving patient analysis to memory
+2026-07-14 13:15:06 | INFO | memory.population_memory:save_patient_analysis:22 | Saving analysis for patient: PAT10003
+2026-07-14 13:15:06 | SUCCESS | memory.population_memory:save_patient_analysis:36 | Analysis saved for patient: PAT10003
+2026-07-14 13:15:06 | SUCCESS | implementation.population_impl:stratify_patient:335 | Patient analysis stored for PAT10003
+2026-07-14 13:15:09 | SUCCESS | services.population_service:stratify_patient:78 | Stratification completed for patient=PAT10003
+2026-07-14 13:15:09 | SUCCESS | routers.population_router:stratify_patient:53 | Stratification completed for patient=PAT10003
+2026-07-14 13:19:32 | INFO | routers.population_router:stratify_patient:44 | Received stratification request for patient=PAT10001
+2026-07-14 13:19:32 | INFO | services.population_service:stratify_patient:45 | Stratification request received for patient=PAT10001
+2026-07-14 13:19:35 | INFO | implementation.population_impl:stratify_patient:56 | Starting population analysis for patient=PAT10001
+2026-07-14 13:19:35 | INFO | implementation.population_impl:stratify_patient:70 | Executing DataAgent
+2026-07-14 13:20:10 | SUCCESS | implementation.population_impl:stratify_patient:93 | DataAgent completed
+2026-07-14 13:20:10 | INFO | implementation.population_impl:stratify_patient:101 | Executing SegmentationAgent
+2026-07-14 13:20:18 | SUCCESS | implementation.population_impl:stratify_patient:126 | SegmentationAgent completed
+2026-07-14 13:20:18 | INFO | implementation.population_impl:stratify_patient:134 | Executing RiskAgent
+2026-07-14 13:20:30 | SUCCESS | implementation.population_impl:stratify_patient:164 | RiskAgent completed
+2026-07-14 13:20:30 | WARNING | implementation.population_impl:stratify_patient:176 | RiskAgent returned non-JSON. Using default values.
+2026-07-14 13:20:30 | INFO | implementation.population_impl:stratify_patient:193 | Executing InterventionAgent
+2026-07-14 13:20:40 | SUCCESS | implementation.population_impl:stratify_patient:221 | InterventionAgent completed
+2026-07-14 13:20:40 | INFO | implementation.population_impl:stratify_patient:326 | Saving patient analysis to memory
+2026-07-14 13:20:40 | INFO | memory.population_memory:save_patient_analysis:22 | Saving analysis for patient: PAT10001
+2026-07-14 13:20:40 | SUCCESS | memory.population_memory:save_patient_analysis:36 | Analysis saved for patient: PAT10001
+2026-07-14 13:20:40 | SUCCESS | implementation.population_impl:stratify_patient:335 | Patient analysis stored for PAT10001
+2026-07-14 13:20:42 | SUCCESS | services.population_service:stratify_patient:78 | Stratification completed for patient=PAT10001
+2026-07-14 13:20:42 | SUCCESS | routers.population_router:stratify_patient:53 | Stratification completed for patient=PAT10001
+2026-07-14 13:22:24 | INFO | routers.population_router:get_patient_history:85 | Fetching history for patient=PAT10001
+2026-07-14 13:22:24 | INFO | services.population_service:get_patient_history:103 | Fetching patient history for patient=PAT10001
+2026-07-14 13:22:24 | INFO | implementation.population_impl:get_patient_history:377 | Fetching patient history for PAT10001
+2026-07-14 13:22:24 | INFO | memory.population_memory:get_patient_history:45 | Fetching history for patient: PAT10001
+2026-07-14 13:22:24 | SUCCESS | services.population_service:get_patient_history:112 | Patient history retrieved for patient=PAT10001
+2026-07-14 13:22:31 | INFO | routers.population_router:get_population_summary:119 | Generating population summary
+2026-07-14 13:22:31 | INFO | services.population_service:get_population_summary:147 | Generating population summary
+2026-07-14 13:22:31 | INFO | implementation.population_impl:get_population_summary:390 | Generating population summary
+2026-07-14 13:22:31 | INFO | memory.population_memory:get_population_size:105 | Population size: 2
+2026-07-14 13:22:31 | INFO | memory.population_memory:get_high_risk_patients:116 | Retrieving patients with risk score >= 0.7
+2026-07-14 13:22:31 | SUCCESS | memory.population_memory:get_high_risk_patients:146 | Found 0 high-risk patients
+2026-07-14 13:22:31 | INFO | memory.population_memory:get_segment_distribution:154 | Calculating population segment distribution
+2026-07-14 13:22:31 | SUCCESS | memory.population_memory:get_segment_distribution:174 | Segment distribution calculated
+2026-07-14 13:22:31 | SUCCESS | services.population_service:get_population_summary:153 | Population summary generated
+2026-07-14 13:22:38 | INFO | routers.population_router:get_high_risk_patients:157 | Fetching high-risk patients with threshold=0.7
+2026-07-14 13:22:38 | INFO | services.population_service:get_high_risk_patients:183 | Fetching high-risk patients threshold=0.7
+2026-07-14 13:22:38 | INFO | memory.population_memory:get_high_risk_patients:116 | Retrieving patients with risk score >= 0.7
+2026-07-14 13:22:38 | SUCCESS | memory.population_memory:get_high_risk_patients:146 | Found 0 high-risk patients
+2026-07-14 13:22:38 | SUCCESS | services.population_service:get_high_risk_patients:192 | Retrieved 0 high-risk patients
+2026-07-14 13:22:46 | INFO | routers.population_router:get_segment_distribution:191 | Fetching segment distribution
+2026-07-14 13:22:46 | INFO | services.population_service:get_segment_distribution:226 | Fetching segment distribution
+2026-07-14 13:22:46 | INFO | memory.population_memory:get_segment_distribution:154 | Calculating population segment distribution
+2026-07-14 13:22:46 | SUCCESS | memory.population_memory:get_segment_distribution:174 | Segment distribution calculated
+2026-07-14 13:22:46 | SUCCESS | services.population_service:get_segment_distribution:234 | Segment distribution generated
+2026-07-14 13:22:54 | INFO | routers.population_router:get_segment_distribution:191 | Fetching segment distribution
+2026-07-14 13:22:54 | INFO | services.population_service:get_segment_distribution:226 | Fetching segment distribution
+2026-07-14 13:22:54 | INFO | memory.population_memory:get_segment_distribution:154 | Calculating population segment distribution
+2026-07-14 13:22:54 | SUCCESS | memory.population_memory:get_segment_distribution:174 | Segment distribution calculated
+2026-07-14 13:22:54 | SUCCESS | services.population_service:get_segment_distribution:234 | Segment distribution generated
+2026-07-14 13:23:02 | INFO | routers.population_router:health_check:251 | Population Health API health check
+2026-07-14 13:23:15 | INFO | routers.population_router:stratify_patient:44 | Received stratification request for patient=PAT10001
+2026-07-14 13:23:15 | INFO | services.population_service:stratify_patient:45 | Stratification request received for patient=PAT10001
+2026-07-14 13:23:17 | INFO | implementation.population_impl:stratify_patient:56 | Starting population analysis for patient=PAT10001
+2026-07-14 13:23:17 | INFO | implementation.population_impl:stratify_patient:70 | Executing DataAgent
+2026-07-14 13:23:48 | SUCCESS | implementation.population_impl:stratify_patient:93 | DataAgent completed
+2026-07-14 13:23:48 | INFO | implementation.population_impl:stratify_patient:101 | Executing SegmentationAgent
+2026-07-14 13:23:54 | SUCCESS | implementation.population_impl:stratify_patient:126 | SegmentationAgent completed
+2026-07-14 13:23:54 | INFO | implementation.population_impl:stratify_patient:134 | Executing RiskAgent
+2026-07-14 13:23:55 | SUCCESS | implementation.population_impl:stratify_patient:164 | RiskAgent completed
+2026-07-14 13:23:55 | WARNING | implementation.population_impl:stratify_patient:176 | RiskAgent returned non-JSON. Using default values.
+2026-07-14 13:23:55 | INFO | implementation.population_impl:stratify_patient:193 | Executing InterventionAgent
+2026-07-14 13:24:14 | SUCCESS | implementation.population_impl:stratify_patient:221 | InterventionAgent completed
+2026-07-14 13:24:14 | INFO | implementation.population_impl:stratify_patient:326 | Saving patient analysis to memory
+2026-07-14 13:24:14 | INFO | memory.population_memory:save_patient_analysis:22 | Saving analysis for patient: PAT10001
+2026-07-14 13:24:14 | SUCCESS | memory.population_memory:save_patient_analysis:36 | Analysis saved for patient: PAT10001
+2026-07-14 13:24:14 | SUCCESS | implementation.population_impl:stratify_patient:335 | Patient analysis stored for PAT10001
+2026-07-14 13:24:16 | SUCCESS | services.population_service:stratify_patient:78 | Stratification completed for patient=PAT10001
+2026-07-14 13:24:16 | SUCCESS | routers.population_router:stratify_patient:53 | Stratification completed for patient=PAT10001
+2026-07-14 13:27:16 | INFO | routers.population_router:stratify_patient:44 | Received stratification request for patient=PAT10001
+2026-07-14 13:27:16 | INFO | services.population_service:stratify_patient:45 | Stratification request received for patient=PAT10001
+2026-07-14 13:27:18 | INFO | implementation.population_impl:stratify_patient:56 | Starting population analysis for patient=PAT10001
+2026-07-14 13:27:18 | INFO | implementation.population_impl:stratify_patient:70 | Executing DataAgent
+2026-07-14 13:27:38 | SUCCESS | implementation.population_impl:stratify_patient:93 | DataAgent completed
+2026-07-14 13:27:38 | INFO | implementation.population_impl:stratify_patient:101 | Executing SegmentationAgent
+2026-07-14 13:27:39 | SUCCESS | implementation.population_impl:stratify_patient:126 | SegmentationAgent completed
+2026-07-14 13:27:39 | INFO | implementation.population_impl:stratify_patient:134 | Executing RiskAgent
+2026-07-14 13:27:55 | SUCCESS | implementation.population_impl:stratify_patient:164 | RiskAgent completed
+2026-07-14 13:27:55 | WARNING | implementation.population_impl:stratify_patient:176 | RiskAgent returned non-JSON. Using default values.
+2026-07-14 13:27:55 | INFO | implementation.population_impl:stratify_patient:193 | Executing InterventionAgent
+2026-07-14 13:28:17 | SUCCESS | implementation.population_impl:stratify_patient:221 | InterventionAgent completed
+2026-07-14 13:28:17 | INFO | implementation.population_impl:stratify_patient:326 | Saving patient analysis to memory
+2026-07-14 13:28:17 | INFO | memory.population_memory:save_patient_analysis:22 | Saving analysis for patient: PAT10001
+2026-07-14 13:28:17 | SUCCESS | memory.population_memory:save_patient_analysis:36 | Analysis saved for patient: PAT10001
+2026-07-14 13:28:17 | SUCCESS | implementation.population_impl:stratify_patient:335 | Patient analysis stored for PAT10001
+2026-07-14 13:28:19 | SUCCESS | services.population_service:stratify_patient:78 | Stratification completed for patient=PAT10001
+2026-07-14 13:28:19 | SUCCESS | routers.population_router:stratify_patient:53 | Stratification completed for patient=PAT10001
+2026-07-14 13:32:42 | INFO | routers.population_router:stratify_patient:44 | Received stratification request for patient=PAT10001
+2026-07-14 13:32:42 | INFO | services.population_service:stratify_patient:45 | Stratification request received for patient=PAT10001
+2026-07-14 13:32:44 | INFO | implementation.population_impl:stratify_patient:56 | Starting population analysis for patient=PAT10001
+2026-07-14 13:32:44 | INFO | implementation.population_impl:stratify_patient:70 | Executing DataAgent
+2026-07-14 13:33:07 | SUCCESS | implementation.population_impl:stratify_patient:93 | DataAgent completed
+2026-07-14 13:33:07 | INFO | implementation.population_impl:stratify_patient:101 | Executing SegmentationAgent
+2026-07-14 13:33:13 | SUCCESS | implementation.population_impl:stratify_patient:126 | SegmentationAgent completed
+2026-07-14 13:33:13 | INFO | implementation.population_impl:stratify_patient:134 | Executing RiskAgent
+2026-07-14 13:33:30 | SUCCESS | implementation.population_impl:stratify_patient:164 | RiskAgent completed
+2026-07-14 13:33:30 | WARNING | implementation.population_impl:stratify_patient:176 | RiskAgent returned non-JSON. Using default values.
+2026-07-14 13:33:30 | INFO | implementation.population_impl:stratify_patient:193 | Executing InterventionAgent
+2026-07-14 13:33:36 | SUCCESS | implementation.population_impl:stratify_patient:221 | InterventionAgent completed
+2026-07-14 13:33:36 | INFO | implementation.population_impl:stratify_patient:326 | Saving patient analysis to memory
+2026-07-14 13:33:36 | INFO | memory.population_memory:save_patient_analysis:22 | Saving analysis for patient: PAT10001
+2026-07-14 13:33:36 | SUCCESS | memory.population_memory:save_patient_analysis:36 | Analysis saved for patient: PAT10001
+2026-07-14 13:33:36 | SUCCESS | implementation.population_impl:stratify_patient:335 | Patient analysis stored for PAT10001
+2026-07-14 13:33:38 | SUCCESS | services.population_service:stratify_patient:78 | Stratification completed for patient=PAT10001
+2026-07-14 13:33:38 | SUCCESS | routers.population_router:stratify_patient:53 | Stratification completed for patient=PAT10001
+2026-07-14 13:42:38 | WARNING | main:lifespan:26 | Shutting down Population Health Management API...
+2026-07-14 13:42:38 | SUCCESS | main:lifespan:30 | Population Health Management API shutdown completed
+2026-07-14 13:42:41 | INFO | config.llm_config:<module>:18 | Using OpenRouter Model: meta-llama/llama-3.3-70b-instruct
+2026-07-14 13:42:41 | INFO | agents.population_agents:__init__:17 | Initializing Population Health Agents...
+2026-07-14 13:42:41 | SUCCESS | agents.population_agents:__init__:23 | {model} Model Client initialized successfully
+2026-07-14 13:42:41 | SUCCESS | agents.population_agents:__init__:44 | DataAgent initialized
+2026-07-14 13:42:41 | SUCCESS | agents.population_agents:__init__:70 | SegmentationAgent initialized
+2026-07-14 13:42:41 | SUCCESS | agents.population_agents:__init__:99 | RiskAgent initialized
+2026-07-14 13:42:41 | SUCCESS | agents.population_agents:__init__:121 | InterventionAgent initialized
+2026-07-14 13:42:41 | SUCCESS | agents.population_agents:__init__:125 | All Population Health Agents initialized successfully
+2026-07-14 13:42:41 | INFO | memory.population_memory:__init__:11 | PopulationMemory initialized
+2026-07-14 13:42:45 | INFO | services.population_service:__init__:25 | Initializing PopulationHealthService
+2026-07-14 13:42:45 | INFO | implementation.population_impl:__init__:25 | Initializing PopulationHealthImplementation
+2026-07-14 13:42:45 | SUCCESS | implementation.population_impl:__init__:45 | PopulationHealthImplementation initialized
+2026-07-14 13:42:45 | SUCCESS | services.population_service:__init__:31 | PopulationHealthService initialized successfully
+2026-07-14 13:42:45 | INFO | main:lifespan:16 | Starting Population Health Management API...
+2026-07-14 13:42:45 | SUCCESS | main:lifespan:20 | Population Health Management API started successfully
+2026-07-14 13:43:00 | INFO | routers.population_router:stratify_patient:44 | Received stratification request for patient=PAT10003
+2026-07-14 13:43:00 | INFO | services.population_service:stratify_patient:45 | Stratification request received for patient=PAT10003
+2026-07-14 13:43:02 | INFO | implementation.population_impl:stratify_patient:56 | Starting population analysis for patient=PAT10003
+2026-07-14 13:43:02 | INFO | implementation.population_impl:stratify_patient:70 | Executing DataAgent
+2026-07-14 13:43:12 | SUCCESS | implementation.population_impl:stratify_patient:93 | DataAgent completed
+2026-07-14 13:43:12 | INFO | implementation.population_impl:stratify_patient:101 | Executing SegmentationAgent
+2026-07-14 13:43:17 | SUCCESS | implementation.population_impl:stratify_patient:126 | SegmentationAgent completed
+2026-07-14 13:43:17 | INFO | implementation.population_impl:stratify_patient:134 | Executing RiskAgent
+2026-07-14 13:43:30 | SUCCESS | implementation.population_impl:stratify_patient:164 | RiskAgent completed
+2026-07-14 13:43:30 | WARNING | implementation.population_impl:stratify_patient:176 | RiskAgent returned non-JSON. Using default values.
+2026-07-14 13:43:30 | INFO | implementation.population_impl:stratify_patient:193 | Executing InterventionAgent
+2026-07-14 13:43:55 | SUCCESS | implementation.population_impl:stratify_patient:221 | InterventionAgent completed
+2026-07-14 13:43:55 | INFO | implementation.population_impl:stratify_patient:326 | Saving patient analysis to memory
+2026-07-14 13:43:55 | INFO | memory.population_memory:save_patient_analysis:22 | Saving analysis for patient: PAT10003
+2026-07-14 13:43:55 | SUCCESS | memory.population_memory:save_patient_analysis:36 | Analysis saved for patient: PAT10003
+2026-07-14 13:43:55 | SUCCESS | implementation.population_impl:stratify_patient:335 | Patient analysis stored for PAT10003
+2026-07-14 13:43:57 | SUCCESS | services.population_service:stratify_patient:78 | Stratification completed for patient=PAT10003
+2026-07-14 13:43:57 | SUCCESS | routers.population_router:stratify_patient:53 | Stratification completed for patient=PAT10003
+2026-07-21 18:26:14 | INFO | config.llm_config:<module>:18 | Using OpenRouter Model: meta-llama/llama-3.3-70b-instruct
+2026-07-21 18:26:14 | INFO | agents.population_agents:__init__:17 | Initializing Population Health Agents...
+2026-07-21 18:26:14 | SUCCESS | agents.population_agents:__init__:23 | {model} Model Client initialized successfully
+2026-07-21 18:26:14 | SUCCESS | agents.population_agents:__init__:44 | DataAgent initialized
+2026-07-21 18:26:14 | SUCCESS | agents.population_agents:__init__:70 | SegmentationAgent initialized
+2026-07-21 18:26:14 | SUCCESS | agents.population_agents:__init__:99 | RiskAgent initialized
+2026-07-21 18:26:14 | SUCCESS | agents.population_agents:__init__:121 | InterventionAgent initialized
+2026-07-21 18:26:14 | SUCCESS | agents.population_agents:__init__:125 | All Population Health Agents initialized successfully
+2026-07-21 18:26:14 | INFO | memory.population_memory:__init__:11 | PopulationMemory initialized
+2026-07-21 18:26:17 | INFO | services.population_service:__init__:25 | Initializing PopulationHealthService
+2026-07-21 18:26:17 | INFO | implementation.population_impl:__init__:25 | Initializing PopulationHealthImplementation
+2026-07-21 18:26:17 | SUCCESS | implementation.population_impl:__init__:45 | PopulationHealthImplementation initialized
+2026-07-21 18:26:17 | SUCCESS | services.population_service:__init__:31 | PopulationHealthService initialized successfully
+2026-07-21 18:26:19 | INFO | config.llm_config:<module>:18 | Using OpenRouter Model: meta-llama/llama-3.3-70b-instruct
+2026-07-21 18:26:19 | INFO | agents.population_agents:__init__:17 | Initializing Population Health Agents...
+2026-07-21 18:26:20 | SUCCESS | agents.population_agents:__init__:23 | {model} Model Client initialized successfully
+2026-07-21 18:26:20 | SUCCESS | agents.population_agents:__init__:44 | DataAgent initialized
+2026-07-21 18:26:20 | SUCCESS | agents.population_agents:__init__:70 | SegmentationAgent initialized
+2026-07-21 18:26:20 | SUCCESS | agents.population_agents:__init__:99 | RiskAgent initialized
+2026-07-21 18:26:20 | SUCCESS | agents.population_agents:__init__:121 | InterventionAgent initialized
+2026-07-21 18:26:20 | SUCCESS | agents.population_agents:__init__:125 | All Population Health Agents initialized successfully
+2026-07-21 18:26:20 | INFO | memory.population_memory:__init__:11 | PopulationMemory initialized
+2026-07-21 18:26:23 | INFO | services.population_service:__init__:25 | Initializing PopulationHealthService
+2026-07-21 18:26:23 | INFO | implementation.population_impl:__init__:25 | Initializing PopulationHealthImplementation
+2026-07-21 18:26:23 | SUCCESS | implementation.population_impl:__init__:45 | PopulationHealthImplementation initialized
+2026-07-21 18:26:23 | SUCCESS | services.population_service:__init__:31 | PopulationHealthService initialized successfully
+2026-07-21 18:26:23 | INFO | main:lifespan:16 | Starting Population Health Management API...
+2026-07-21 18:26:23 | SUCCESS | main:lifespan:20 | Population Health Management API started successfully
+2026-07-21 18:28:25 | INFO | routers.population_router:stratify_patient:44 | Received stratification request for patient=PAT10001
+2026-07-21 18:28:25 | INFO | services.population_service:stratify_patient:45 | Stratification request received for patient=PAT10001
+2026-07-21 18:28:28 | INFO | implementation.population_impl:stratify_patient:56 | Starting population analysis for patient=PAT10001
+2026-07-21 18:28:28 | INFO | implementation.population_impl:stratify_patient:70 | Executing DataAgent
+2026-07-21 18:28:54 | SUCCESS | implementation.population_impl:stratify_patient:93 | DataAgent completed
+2026-07-21 18:28:54 | INFO | implementation.population_impl:stratify_patient:101 | Executing SegmentationAgent
+2026-07-21 18:28:59 | SUCCESS | implementation.population_impl:stratify_patient:126 | SegmentationAgent completed
+2026-07-21 18:28:59 | INFO | implementation.population_impl:stratify_patient:134 | Executing RiskAgent
+2026-07-21 18:29:21 | SUCCESS | implementation.population_impl:stratify_patient:164 | RiskAgent completed
+2026-07-21 18:29:21 | WARNING | implementation.population_impl:stratify_patient:176 | RiskAgent returned non-JSON. Using default values.
+2026-07-21 18:29:21 | INFO | implementation.population_impl:stratify_patient:193 | Executing InterventionAgent
+2026-07-21 18:29:38 | SUCCESS | implementation.population_impl:stratify_patient:221 | InterventionAgent completed
+2026-07-21 18:29:38 | INFO | implementation.population_impl:stratify_patient:326 | Saving patient analysis to memory
+2026-07-21 18:29:38 | INFO | memory.population_memory:save_patient_analysis:22 | Saving analysis for patient: PAT10001
+2026-07-21 18:29:38 | SUCCESS | memory.population_memory:save_patient_analysis:36 | Analysis saved for patient: PAT10001
+2026-07-21 18:29:38 | SUCCESS | implementation.population_impl:stratify_patient:335 | Patient analysis stored for PAT10001
+2026-07-21 18:29:40 | SUCCESS | services.population_service:stratify_patient:78 | Stratification completed for patient=PAT10001
+2026-07-21 18:29:40 | SUCCESS | routers.population_router:stratify_patient:53 | Stratification completed for patient=PAT10001
+2026-07-21 18:30:28 | INFO | routers.population_router:stratify_patient:44 | Received stratification request for patient=PAT10003
+2026-07-21 18:30:28 | INFO | services.population_service:stratify_patient:45 | Stratification request received for patient=PAT10003
+2026-07-21 18:30:30 | INFO | implementation.population_impl:stratify_patient:56 | Starting population analysis for patient=PAT10003
+2026-07-21 18:30:30 | INFO | implementation.population_impl:stratify_patient:70 | Executing DataAgent
+2026-07-21 18:30:45 | SUCCESS | implementation.population_impl:stratify_patient:93 | DataAgent completed
+2026-07-21 18:30:45 | INFO | implementation.population_impl:stratify_patient:101 | Executing SegmentationAgent
+2026-07-21 18:30:55 | SUCCESS | implementation.population_impl:stratify_patient:126 | SegmentationAgent completed
+2026-07-21 18:30:55 | INFO | implementation.population_impl:stratify_patient:134 | Executing RiskAgent
+2026-07-21 18:31:03 | SUCCESS | implementation.population_impl:stratify_patient:164 | RiskAgent completed
+2026-07-21 18:31:03 | WARNING | implementation.population_impl:stratify_patient:176 | RiskAgent returned non-JSON. Using default values.
+2026-07-21 18:31:03 | INFO | implementation.population_impl:stratify_patient:193 | Executing InterventionAgent
+2026-07-21 18:31:16 | SUCCESS | implementation.population_impl:stratify_patient:221 | InterventionAgent completed
+2026-07-21 18:31:16 | INFO | implementation.population_impl:stratify_patient:326 | Saving patient analysis to memory
+2026-07-21 18:31:16 | INFO | memory.population_memory:save_patient_analysis:22 | Saving analysis for patient: PAT10003
+2026-07-21 18:31:16 | SUCCESS | memory.population_memory:save_patient_analysis:36 | Analysis saved for patient: PAT10003
+2026-07-21 18:31:16 | SUCCESS | implementation.population_impl:stratify_patient:335 | Patient analysis stored for PAT10003
+2026-07-21 18:31:18 | SUCCESS | services.population_service:stratify_patient:78 | Stratification completed for patient=PAT10003
+2026-07-21 18:31:18 | SUCCESS | routers.population_router:stratify_patient:53 | Stratification completed for patient=PAT10003
+2026-07-21 18:32:43 | WARNING | main:lifespan:26 | Shutting down Population Health Management API...
+2026-07-21 18:32:43 | SUCCESS | main:lifespan:30 | Population Health Management API shutdown completed
