@@ -1,9 +1,10 @@
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
-from utils.logger import logger
+from app.config.settings import settings
+logger = settings.get_logger()
 
-from routers.population_router import router as population_router
+from app.routers.population_router import router as population_router
 
 
 # --------------------------------------------------
@@ -41,19 +42,6 @@ app = FastAPI(
     description="AutoGen 0.7.5 Multi-Agent Population Health Management API",
     version="1.0.0",
     lifespan=lifespan
-)
-
-from fastapi.middleware.cors import CORSMiddleware
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
 )
 
 # --------------------------------------------------

@@ -5,17 +5,18 @@ from fastapi import (
     status
 )
 
-from utils.logger import logger
+from app.config.settings import settings
+logger = settings.get_logger()
 
-from services.population_service import (
+from app.services.population_service import (
     PopulationHealthService
 )
 
-from models.request_model import (
+from app.schemas.request_model import (
     PatientRequest
 )
 
-from models.response_model import (
+from app.schemas.response_model import (
     PopulationHealthResponse
 )
 
@@ -208,35 +209,6 @@ async def get_segment_distribution():
         )
 
 
-@router.delete(
-    "/clear-memory",
-    status_code=status.HTTP_200_OK
-)
-async def clear_population_memory():
-    """
-    Clear all population memory records.
-    """
-
-    try:
-
-        logger.warning(
-            "Population memory clear requested"
-        )
-
-        result = await service.clear_memory()
-
-        return result
-
-    except Exception as ex:
-
-        logger.exception(
-            f"Memory clear failed: {str(ex)}"
-        )
-
-        raise HTTPException(
-            status_code=500,
-            detail=str(ex)
-        )
 
 
 @router.get(

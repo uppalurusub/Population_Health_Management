@@ -10,3 +10,4 @@ autogen-ext==0.7.5
 openai
 loguru
 mlflow
+langsmith

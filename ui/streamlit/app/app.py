@@ -78,11 +78,3 @@ elif menu == "Health Check":
         if result is not None:
             st.success("API is healthy.")
             display_response(result)
-
-elif menu == "Clear Memory":
-    st.header("Clear Population Memory")
-    st.warning("This will clear all stored population analysis.")
-    if st.button("Clear Memory"):
-        result = run_api(clear_memory, "Population memory cleared.")
-        if result is not None:
-            display_response(result)

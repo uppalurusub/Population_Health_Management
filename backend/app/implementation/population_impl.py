@@ -1,14 +1,15 @@
 import json
 from datetime import datetime
 
-from utils.logger import logger
+from app.config.settings import settings
+logger = settings.get_logger()
 
-from agents.population_agents import population_agents
-from memory.population_memory import population_memory
+from app.agents.population_agents import population_agents
+from app.memory.population_memory import population_memory
 
-from models.request_model import PatientRequest
+from app.schemas.request_model import PatientRequest
 
-from models.response_model import (
+from app.schemas.response_model import (
     PopulationHealthResponse,
     PopulationSegment,
     RiskAssessment,

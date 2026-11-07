@@ -7,7 +7,7 @@ MENU_OPTIONS = [
     "High Risk Patients",
     "Segment Distribution",
     "Health Check",
-    "Clear Memory",
+    
 ]
 
 def render_sidebar():

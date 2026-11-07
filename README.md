@@ -1,117 +1,58 @@
 # Population Health Management System
 
-An AI-powered **Population Health Management System** that performs intelligent patient risk stratification, population analytics, chronic disease assessment, and personalized healthcare recommendations using a Multi-Agent architecture built with **AutoGen**, **FastAPI**, and **React**.
+A production-ready **Population Health Management (PHM)** solution built using **FastAPI**, **Microsoft AutoGen 0.7.5**, and **LLM-powered Multi-Agent AI**.
 
----
-
-# Project Architecture
-
-```
-Population_Health_Management
-│
-├── backend
-│   └── population-health-management-python-app
-│
-├── ui
-│   ├── Streamlit App
-│   └── ReactJS Application
-│
-└── requirements.txt
-```
+The system performs intelligent patient stratification, risk assessment, care gap identification, intervention recommendation, and population analytics to support value-based healthcare and proactive care management.
 
 ---
 
 # Features
 
-## Patient Risk Stratification
-
-- AI-driven patient risk assessment
-- Risk score calculation
-- Chronic disease evaluation
-- Lifestyle risk analysis
-- Social determinant analysis
-- Healthcare utilization assessment
-- Personalized recommendations
-
----
-
-## Population Analytics
-
-- Population Summary
-- High Risk Population
-- Population Segmentation
-- Risk Distribution
-- Disease Burden Analysis
-- Care Gap Identification
+- Multi-Agent AI powered by AutoGen 0.7.5
+- Patient Population Stratification
+- Clinical Risk Assessment
+- Care Gap Analysis
+- Personalized Intervention Recommendations
+- Population-Level Analytics
+- High-Risk Patient Identification
+- Segment Distribution Analysis
+- Patient History Management
+- Memory-based Patient Tracking
+- Structured REST APIs
+- Swagger Documentation
+- Loguru Logging
+- MLflow Integration
+- Modular FastAPI Architecture
 
 ---
 
-## AI Multi-Agent Workflow
-
-The backend utilizes multiple AI agents responsible for specialized healthcare analysis.
-
-Example responsibilities include:
-
-- Population Risk Agent
-- Clinical Assessment Agent
-- Lifestyle Analysis Agent
-- Social Determinants Agent
-- Recommendation Agent
-- Summary Agent
-
----
-
-# Technology Stack
-
-## Backend
-
-- Python 3.11+
-- FastAPI
-- AutoGen 0.7.5
-- Pydantic
-- Async Programming
-- REST APIs
-
----
-
-## Frontend
-
-- React 19
-- TypeScript
-- Vite
-- Axios
-- React Markdown
-
----
-
-# Backend Architecture
+# Architecture
 
 ```
-Client
-
-   │
-
-FastAPI Router
-
-   │
-
-Service Layer
-
-   │
-
-Implementation Layer
-
-   │
-
-AutoGen Agents
-
-   │
-
-Conversation Memory
-
-   │
-
-Response
+                +----------------+
+                | FastAPI Client |
+                +--------+-------+
+                         |
+                         v
+                +----------------+
+                | Population API |
+                +--------+-------+
+                         |
+                  Router Layer
+                         |
+                  Service Layer
+                         |
+              Implementation Layer
+                         |
+                AutoGen Multi-Agent
+                         |
+    +-----------+-----------+-----------+-----------+
+    |           |           |           |           |
+Data Agent  Segmentation Risk Agent Intervention Agent
+                         |
+                  Population Memory
+                         |
+                    Response Builder
 ```
 
 ---
@@ -119,134 +60,135 @@ Response
 # Project Structure
 
 ```
-backend/
-
-population-health-management-python-app/
-
+Population_Health_Management
 │
-
-├── agents/
-│     population_agents.py
+├── app
+│   ├── agents
+│   │     population_agents.py
+│   │
+│   ├── config
+│   │     llm_config.py
+│   │     llm_models_config.py
+│   │
+│   ├── implementation
+│   │     population_impl.py
+│   │
+│   ├── memory
+│   │     population_memory.py
+│   │
+│   ├── models
+│   │     request_model.py
+│   │     response_model.py
+│   │
+│   ├── routers
+│   │     population_router.py
+│   │
+│   ├── services
+│   │     population_service.py
+│   │
+│   ├── utils
+│   │     logger.py
+│   │     json_utils.py
+│   │     prompt_templates.py
+│   │
+│   └── main.py
 │
-├── config/
-│     llm_config.py
+├── logs
 │
-├── implementation/
-│     population_impl.py
+├── requirements.txt
 │
-├── memory/
-│     population_memory.py
+├── mlflow.db
 │
-├── models/
-│     request_model.py
-│     response_model.py
-│
-├── routers/
-│     population_router.py
-│
-├── services/
-│     population_service.py
-│
-├── utils/
-│     logger.py
-│
-└── main.py
+└── .env
 ```
 
 ---
 
-# React Frontend Structure
+# Multi-Agent Workflow
 
-```
-src/
+## 1. Data Agent
 
-├── api/
-│     httpClient.ts
-│     populationHealthApi.ts
-│
-├── components/
-│     PatientStratificationForm.tsx
-│     StratificationResult.tsx
-│     RiskMetric.tsx
-│     MarkdownContent.tsx
-│
-├── data/
-│     samplePatients.ts
-│
-├── styles/
-│
-├── types/
-│
-├── App.tsx
-└── main.tsx
-```
+Responsibilities
+
+- Analyze patient demographics
+- Analyze diagnoses
+- Review medications
+- Review utilization history
+- Generate clinical summary
+
+Outputs
+
+- Clinical Summary
+- Chronic Conditions
+- Utilization Findings
 
 ---
 
-# Installation
+## 2. Segmentation Agent
 
-## Clone Repository
+Classifies patients into population groups.
 
-```bash
-git clone <repository-url>
+Example Segments
 
-cd Population_Health_Management
-```
+- Healthy
+- Preventive Care
+- Chronic Disease
+- High Risk
+- Elderly Care
+- Frequent Utilizer
+- Complex Care
 
----
+Outputs
 
-# Backend Setup
-
-Navigate to backend.
-
-```bash
-cd backend/population-health-management-python-app
-```
-
-Create virtual environment.
-
-```bash
-python -m venv venv
-```
-
-Activate environment.
-
-### Windows
-
-```bash
-venv\Scripts\activate
-```
-
-### Linux / Mac
-
-```bash
-source venv/bin/activate
-```
-
-Install dependencies.
-
-```bash
-pip install -r ../../requirements.txt
-```
-
-Configure environment variables.
-
-Example:
-
-```env
-OPENAI_API_KEY=your_api_key
-OPENAI_MODEL=gpt-4
-```
+- Segment Name
+- Segment Reason
 
 ---
 
-# Run Backend
+## 3. Risk Agent
 
-```bash
-uvicorn main:app --reload
-```
+Predicts patient risks.
 
-Backend runs at
+Outputs
+
+- Overall Risk Level
+- Risk Score
+- Readmission Risk
+- Mortality Risk
+- Cost Risk
+
+---
+
+## 4. Intervention Agent
+
+Recommends personalized interventions.
+
+Examples
+
+- Lifestyle Coaching
+- Preventive Screening
+- Medication Review
+- Specialist Referral
+- Care Coordination
+- Disease Management
+
+---
+
+# Population Analytics
+
+The API provides analytics including
+
+- Population Summary
+- High-Risk Population
+- Segment Distribution
+- Patient History
+- Memory Statistics
+
+---
+
+# REST APIs
+
+## Base URL
 
 ```
 http://localhost:8000
@@ -254,99 +196,148 @@ http://localhost:8000
 
 ---
 
-# API Documentation
-
-Swagger
-
-```
-http://localhost:8000/docs
-```
-
-ReDoc
-
-```
-http://localhost:8000/redoc
-```
-
----
-
-# Frontend Setup
-
-Navigate to React application.
-
-```bash
-cd ui/reactjs/population-health-management-reactjs-app
-```
-
-Install packages.
-
-```bash
-npm install
-```
-
-Run application.
-
-```bash
-npm run dev
-```
-
-Frontend
-
-```
-http://localhost:5173
-```
-
----
-
-# REST API Endpoints
-
-## Root
-
-```
-GET /
-```
-
-Returns application status.
-
----
-
-## Health
+## Health Check
 
 ```
 GET /health
 ```
 
-Health check endpoint.
+Response
+
+```json
+{
+  "status": "healthy",
+  "service": "Population Health Management API"
+}
+```
 
 ---
 
-## API Information
+## Application Info
 
 ```
 GET /info
 ```
 
-Returns application information and architecture.
-
 ---
 
-## Patient Stratification
+## Stratify Patient
 
 ```
 POST /population-health/stratify
 ```
 
-Performs comprehensive patient risk stratification.
+Sample Request
+
+```json
+{
+  "patient_id": "PAT10001",
+  "patient_name": "John Doe",
+  "age": 67,
+  "gender": "Male",
+  "diagnoses": [
+    "Hypertension",
+    "Type 2 Diabetes"
+  ],
+  "medications": [
+    "Metformin",
+    "Lisinopril"
+  ],
+  "allergies": [
+    "Penicillin"
+  ],
+  "vital_signs": {
+    "systolic_bp": 150,
+    "diastolic_bp": 95,
+    "heart_rate": 92,
+    "bmi": 31.8
+  },
+  "labs": {
+    "hba1c": 8.4,
+    "cholesterol": 240,
+    "ldl": 170,
+    "hdl": 38,
+    "triglycerides": 210,
+    "creatinine": 1.2
+  },
+  "lifestyle": {
+    "smoker": true,
+    "alcohol_use": false,
+    "exercise_frequency_per_week": 1
+  },
+  "social_determinants": {
+    "employment_status": "Retired",
+    "education_level": "College",
+    "housing_stability": "Stable",
+    "transportation_access": true
+  },
+  "utilization_history": {
+    "hospital_visits_last_year": 4,
+    "emergency_visits_last_year": 2,
+    "admissions_last_year": 2,
+    "readmissions_last_year": 1
+  }
+}
+```
 
 ---
 
-## Patient History
+Sample Response
+
+```json
+{
+  "success": true,
+  "patient_id": "PAT10001",
+  "patient_name": "John Doe",
+  "population_segment": {
+    "segment_name": "High Risk Chronic Care",
+    "segment_description": "Multiple chronic diseases requiring coordinated care."
+  },
+  "risk_assessment": {
+    "risk_level": "High",
+    "risk_score": 0.88,
+    "readmission_risk": 0.82,
+    "mortality_risk": 0.33,
+    "cost_risk": 0.91
+  },
+  "care_gaps": [
+    {
+      "category": "Diabetes",
+      "description": "HbA1c above target",
+      "priority": "High"
+    }
+  ],
+  "interventions": [
+    {
+      "intervention_type": "Care Coordination",
+      "recommendation": "Enroll in chronic disease management program.",
+      "priority": "High"
+    }
+  ],
+  "agent_findings": [
+    {
+      "agent_name": "Risk Agent",
+      "findings": "High readmission risk identified."
+    }
+  ],
+  "summary": "Patient classified as High Risk Chronic Care.",
+  "message": "Population analysis completed successfully."
+}
+```
+
+---
+
+## Get Patient History
 
 ```
 GET /population-health/history/{patient_id}
 ```
 
-Returns historical patient analyses.
+Example
+
+```
+GET /population-health/history/PAT10001
+```
 
 ---
 
@@ -356,23 +347,13 @@ Returns historical patient analyses.
 GET /population-health/population-summary
 ```
 
-Returns population-level analytics.
-
 ---
 
-## High Risk Patients
+## High-Risk Patients
 
 ```
-GET /population-health/high-risk-patients
+GET /population-health/high-risk-patients?threshold=0.7
 ```
-
-Query Parameter
-
-```
-threshold=0.7
-```
-
-Returns patients above the specified risk threshold.
 
 ---
 
@@ -382,97 +363,164 @@ Returns patients above the specified risk threshold.
 GET /population-health/segment-distribution
 ```
 
-Returns distribution of patient segments.
-
 ---
 
-# Sample Request
+## Clear Memory
 
-```json
-{
-  "patient_id": "P1001",
-  "patient_name": "John Doe",
-  "age": 62,
-  "gender": "Male",
-  "diagnoses": [
-    "Diabetes",
-    "Hypertension"
-  ],
-  "medications": [
-    "Metformin",
-    "Lisinopril"
-  ],
-  "allergies": [],
-  "vital_signs": {
-    "systolic_bp": 145,
-    "diastolic_bp": 92,
-    "heart_rate": 84,
-    "bmi": 31.2
-  },
-  "labs": {
-    "hba1c": 8.1,
-    "cholesterol": 230
-  }
-}
+```
+DELETE /population-health/clear-memory
 ```
 
 ---
 
-# Expected Workflow
+# Request Model
 
-```
-Patient Information
+Patient demographics
 
-        │
+- Patient ID
+- Patient Name
+- Age
+- Gender
 
-Clinical Assessment
+Clinical Information
 
-        │
+- Diagnoses
+- Medications
+- Allergies
 
-Lifestyle Evaluation
+Vital Signs
 
-        │
+- Blood Pressure
+- Heart Rate
+- BMI
+
+Laboratory Results
+
+- HbA1c
+- Cholesterol
+- LDL
+- HDL
+- Triglycerides
+- Creatinine
+
+Lifestyle Factors
+
+- Smoking
+- Alcohol
+- Exercise
 
 Social Determinants
 
-        │
+- Employment
+- Education
+- Housing
+- Transportation
 
 Healthcare Utilization
 
-        │
+- Hospital Visits
+- Emergency Visits
+- Admissions
+- Readmissions
 
-Risk Stratification
+---
 
-        │
+# Technologies
 
-Population Segmentation
+| Component | Technology |
+|------------|------------|
+| Language | Python 3.11+ |
+| API | FastAPI |
+| AI Agents | AutoGen 0.7.5 |
+| LLM | OpenAI / Azure OpenAI Compatible |
+| Validation | Pydantic |
+| Logging | Loguru |
+| Experiment Tracking | MLflow |
+| Server | Uvicorn |
 
-        │
+---
 
-Recommendations
+# Installation
 
-        │
+## Clone Repository
 
-Final AI Summary
+```bash
+git clone <repository-url>
 ```
 
 ---
 
-# Frontend Features
+## Create Virtual Environment
 
-- Patient Stratification Form
-- Sample Patient Data
-- Risk Metrics Dashboard
-- Markdown AI Response Rendering
-- Population Risk Visualization
-- Responsive User Interface
-- REST API Integration
+```bash
+python -m venv .venv
+```
+
+---
+
+Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+Linux
+
+```bash
+source .venv/bin/activate
+```
+
+---
+
+## Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Configure Environment
+
+Create `.env`
+
+```text
+OPENAI_API_KEY=your_api_key
+
+OPENAI_MODEL=gpt-4o-mini
+
+OPENAI_BASE_URL=https://api.openai.com/v1
+```
+
+---
+
+## Run Application
+
+```bash
+uvicorn app.main:app --reload
+```
+
+---
+
+Swagger
+
+```
+http://localhost:8000/docs
+```
+
+---
+
+ReDoc
+
+```
+http://localhost:8000/redoc
+```
 
 ---
 
 # Logging
 
-Application logs are stored in
+Log files are stored under
 
 ```
 logs/
@@ -482,40 +530,63 @@ healthcare.log
 error.log
 ```
 
+Loguru is used for
+
+- API Requests
+- Agent Execution
+- Exceptions
+- Population Analysis
+- Risk Prediction
+- Memory Operations
+
+---
+
+# MLflow
+
+The project includes MLflow configuration for experiment tracking.
+
+Example
+
+```bash
+mlflow ui
+```
+
 ---
 
 # Future Enhancements
 
-- Dashboard Analytics
 - Predictive Risk Models
-- Real-Time Population Monitoring
+- Explainable AI (XAI)
+- Real-Time Population Dashboard
 - FHIR Integration
-- Electronic Health Record (EHR) Integration
-- ML-Based Risk Prediction
-- Role-Based Access Control (RBAC)
-- Docker Deployment
-- Kubernetes Deployment
-- Azure Cloud Deployment
+- HL7 Integration
+- SMART on FHIR Support
+- Care Plan Automation
+- Social Risk Prediction
+- Chronic Disease Forecasting
+- Hospital Readmission Prediction
+- Population Health KPIs
+- Power BI Dashboard Export
+- Vector Database for Patient Knowledge
+- Multi-Hospital Population Analytics
 
 ---
 
-# Tech Stack Summary
+# Use Cases
 
-| Layer | Technology |
-|----------|------------|
-| Frontend | React 19 |
-| Language | TypeScript |
-| UI Build | Vite |
-| HTTP Client | Axios |
-| Backend | FastAPI |
-| AI Framework | AutoGen 0.7.5 |
-| Validation | Pydantic |
-| Architecture | Multi-Agent |
-| API | REST |
-| Logging | Python Logging |
+- Population Health Management
+- Value-Based Care
+- Chronic Disease Management
+- Risk Stratification
+- Preventive Healthcare
+- Care Coordination
+- Readmission Reduction
+- Health Insurance Analytics
+- Provider Network Optimization
+- Public Health Monitoring
 
 ---
 
 # License
 
-This project is intended for educational, research, and healthcare AI demonstration purposes.
+This project is intended for educational, research, and enterprise healthcare solution development. Ensure compliance with HIPAA, GDPR, and applicable healthcare regulations before deploying in production.

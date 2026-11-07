@@ -1,11 +1,23 @@
-from utils.logger import logger
+from datetime import datetime
+import time
 
-from implementation.population_impl import (
+
+from app.config.settings import (
+    settings,
+    usage_capture,
+    INPUT_PRICE_PER_1M,
+    OUTPUT_PRICE_PER_1M,
+)
+
+
+logger = settings.get_logger()
+
+from app.implementation.population_impl import (
     PopulationHealthImplementation
 )
 
-from models.request_model import PatientRequest
-from memory.population_memory import population_memory
+from app.schemas.request_model import PatientRequest
+from app.memory.population_memory import population_memory
 
 import mlflow
 from datetime import datetime
@@ -41,6 +53,8 @@ class PopulationHealthService:
         """
 
         try:
+            start_time = datetime.now()
+            start_ts = time.perf_counter()
 
             logger.info(
                 f"Stratification request received "
@@ -51,29 +65,78 @@ class PopulationHealthService:
                 run_name=
                 f"Population_Health_Management_Stratify_Patient_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
             ):
+                mlflow.log_param("start_time", start_time.isoformat())
+                mlflow.set_tag("source", "FastAPI")
+                mlflow.set_tag("endpoint", "monitoring/analyze")
+                mlflow.set_tag("llm_provider", "OpenRouter")
+
+                
+
+                with usage_capture() as usage:
+                    response = await self.impl.stratify_patient(
+                        request
+                    )
+
+                execution_time = time.perf_counter() - start_ts
+                usage_values = usage.as_dict()
+
+                # Log configuration and actual usage separately.
+                mlflow.log_param("llm_model", usage_values["model"])
                 mlflow.log_param(
-                    "input_text",
-                    request
+                    "input_price_per_1m_usd", INPUT_PRICE_PER_1M
                 )
-
-                response = await self.impl.stratify_patient(
-                    request
-                )
-
                 mlflow.log_param(
-                    "response",
-                    response
+                    "output_price_per_1m_usd", OUTPUT_PRICE_PER_1M
+                )
+                mlflow.log_param("input", request)
+                mlflow.log_param("output", response)
+                mlflow.log_param("execution_time", execution_time)
+
+                metric_names = (
+                    "input_tokens",
+                    "output_tokens",
+                    "total_tokens",
+                    "input_cost_usd",
+                    "output_cost_usd",
+                    "total_cost_usd",
+                    "llm_call_count",
+                    "usage_reported_call_count",
+                )
+                for metric_name in metric_names:
+                    mlflow.log_metric(
+                        metric_name,
+                        float(usage_values[metric_name])
+                    )
+
+                mlflow.log_metric(
+                    "execution_time_seconds",
+                    round(execution_time, 4)
                 )
 
-                mlflow.set_tag(
-                    "source",
-                    "FastAPI"
+                mlflow.set_tag("llm_usage_source", usage_values["source"])
+                mlflow.log_param("end_time", datetime.now().isoformat())
+
+                logger.info(
+                    "LLM usage captured: "
+                    f"model={usage_values['model']}, "
+                    f"input_tokens={usage_values['input_tokens']}, "
+                    f"output_tokens={usage_values['output_tokens']}, "
+                    f"total_tokens={usage_values['total_tokens']}, "
+                    f"input_cost_usd={usage_values['input_cost_usd']:.15f}, "
+                    f"output_cost_usd={usage_values['output_cost_usd']:.15f}, "
+                    f"total_cost_usd={usage_values['total_cost_usd']:.15f}, "
+                    f"llm_call_count={usage_values['llm_call_count']}, "
+                    f"usage_reported_call_count="
+                    f"{usage_values['usage_reported_call_count']}"
                 )
 
-                mlflow.set_tag(
-                    "endpoint",
-                    "population-health/stratify"
-                )
+                if usage_values["usage_reported_call_count"] == 0:
+                    logger.warning(
+                        "No token usage was reported by the AutoGen model "
+                        "client. Check that MonitoringImplementation uses "
+                        "settings.get_model_client() and that the provider "
+                        "returns usage metadata."
+                    )
 
             logger.success(
                 f"Stratification completed "
